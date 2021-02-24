@@ -1,4 +1,5 @@
 const express = require('express');
+const config = require('./config');
 
 const app = express();
 
@@ -6,6 +7,6 @@ app.get('/', (req, res) => {
   res.sendFile('index.html' , { root : __dirname})
 })
 
-app.listen(4000, function(){
-  console.log('app started on port 4000');
+app.listen(config.PORT, function(){
+  console.log(`App started on port ${config.PORT}`);
 });

@@ -10,7 +10,24 @@
   <script src="index.js" defer></script>
   
 </head>
-<body ng-app>
-  Lyrics AngularJS
+<body ng-app="lyrics-angularjs">
+  <header>
+    <h1>Lyrics AngularJS</h1>
+  </header>
+  <div ng-controller="my-songs">
+    <div>Moje piosenki:</div>
+    <ul>
+      <li ng-repeat="band in bands">
+        <div>{{ band.name }}</div>
+        <button ng-click="deleteBand(band.id)">Usuń cały zespół</button>
+        <ul>
+          <li ng-repeat="song in band.songs">
+            <div>{{ song.name }}</div>
+            <button ng-click="deleteSong(band.id, song.id)">Usuń piosenkę</button>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </body>
 </html>

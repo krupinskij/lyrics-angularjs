@@ -1,33 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="lyrics-angularjs">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <title>Lyrics AngularJS</title>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  
+  <script src="angular/angular.js"></script>
   <script src="index.js" defer></script>
   
+  <link rel="stylesheet" type="text/css" href="bulma/css/bulma.css">
 </head>
-<body ng-app="lyrics-angularjs">
-  <header>
-    <h1>Lyrics AngularJS</h1>
-  </header>
-  <div ng-controller="my-songs">
-    <div>Moje piosenki:</div>
-    <ul>
-      <li ng-repeat="band in bands">
-        <div>{{ band.name }}</div>
-        <button ng-click="deleteBand(band.id)">Usuń cały zespół</button>
-        <ul>
-          <li ng-repeat="song in band.songs">
-            <div>{{ song.name }}</div>
-            <button ng-click="deleteSong(band.id, song.id)">Usuń piosenkę</button>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+<body>
+  <header ng-include="'components/header/header.html'"></header>
 </body>
 </html>

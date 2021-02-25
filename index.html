@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="lyrics-angularjs">
+<html lang="en" ng-app="app" class="has-navbar-fixed-top">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +8,13 @@
   <title>Lyrics AngularJS</title>
   
   <script src="angular/angular.js"></script>
+  <script src="angular-route/angular-route.js"></script>
   <script src="index.js" defer></script>
   
   <link rel="stylesheet" type="text/css" href="bulma/css/bulma.css">
 </head>
 <body>
   <header ng-include="'components/header/header.html'"></header>
+  <ng-view></ng-view>
 </body>
 </html>

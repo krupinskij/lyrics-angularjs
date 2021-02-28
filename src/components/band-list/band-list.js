@@ -6,17 +6,18 @@ app.directive('bandList', [function() {
     },
     templateUrl: '/components/band-list/band-list.html',
     controller: ($scope, $database) => {
-      $scope.isLoading = 'is-loading';
+      $scope.isProgress = true;
       $scope.isErrorHidden = 'is-hidden';
       $scope.errorMessage = '';
 
       $database.getBandNames()
         .then(
           data => {
+            $scope.isProgress = false;
             $scope.bands = data;
-            $scope.isLoading = '';
           },
           errorMessage => {
+            $scope.isProgress = false;
             $scope.errorMessage = errorMessage;
             $scope.showErrorNotif();
           }

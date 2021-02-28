@@ -9,20 +9,24 @@
   <div class="title has-text-centered is-capitalized">
     {{ title }}
   </div>
-  <table class="table is-striped is-hoverable is-fullwidth">
+  <progress ng-if="isProgress" class="progress is-primary" max="100"></progress>
+  <div ng-if="!isProgress && !songs.length" class="has-text-centered">
+    You don't have any songs yet...
+  </div>
+  <table ng-if="!isProgress && songs.length" class="table is-striped is-hoverable is-fullwidth has-text-centered">
     <thead>
       <tr>
-        <th>Song title</th>
-        <th>Band name</th>
+        <th class="is-size-5">Song title</th>
+        <th class="is-size-5">Band name</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="song in songs">
         <td class="is-capitalized has-text-weight-bold">
-          <a href="/#!/song/{{song.band}}/{{song.title}}">{{ song.title }}</a>
+          <a class="has-text-dark" href="/#!/song/{{song.band}}/{{song.title}}">{{ song.title }}</a>
         </td>
         <td class="is-capitalized">
-          <a href="/#!/songs/{{song.band}}">{{ song.band }}</a>
+          <a class="has-text-dark" href="/#!/songs/{{song.band}}">{{ song.band }}</a>
         </td>
       </tr>
     </tbody>

@@ -6,7 +6,7 @@ app.directive('songList', [function() {
     },
     templateUrl: '/components/song-list/song-list.html',
     controller: ($scope, $database) => {
-      $scope.isLoading = 'is-loading';
+      $scope.isProgress = true;
       $scope.isErrorHidden = 'is-hidden';
       $scope.errorMessage = '';
       $scope.title = '';
@@ -16,10 +16,11 @@ app.directive('songList', [function() {
         $database.getByBandName($scope.bandName)
         .then(
           data => {
+            $scope.isProgress = false;
             $scope.songs = data;
-            $scope.isLoading = '';
           },
           errorMessage => {
+            $scope.isProgress = false;
             $scope.errorMessage = errorMessage;
             $scope.showErrorNotif();
           }
@@ -29,10 +30,11 @@ app.directive('songList', [function() {
         $database.getAll()
         .then(
           data => {
+            $scope.isProgress = false;
             $scope.songs = data;
-            $scope.isLoading = '';
           },
           errorMessage => {
+            $scope.isProgress = false;
             $scope.errorMessage = errorMessage;
             $scope.showErrorNotif();
           }

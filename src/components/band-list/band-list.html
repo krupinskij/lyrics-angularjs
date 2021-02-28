@@ -1,0 +1,24 @@
+<div class="box">
+  <div class="title has-text-centered is-capitalized">
+    My bands
+  </div>
+  <table class="table is-striped is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>Band name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="band in bands">
+        <td class="is-capitalized">
+          <a href="/#!/songs/{{band}}">{{ band }}</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="notification is-danger is-fixed-top-right">
+  <button class="delete" ng-click=hideErrorNotif()></button>
+  {{ errorMessage }}
+</div>

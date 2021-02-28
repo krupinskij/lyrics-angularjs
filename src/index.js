@@ -11,6 +11,7 @@ app.config([
       .when('/new', { templateUrl: '/views/new-song-page.html' })
       .when('/song/:bandName/:songName', { templateUrl: '/views/song-page.html' })
       .when('/songs/:bandName?', { templateUrl: '/views/songs-page.html' })
+      .when('/bands/:bandName?', { templateUrl: '/views/bands-page.html' })
       .otherwise({ redirectTo: '/' })
   }
 ]);

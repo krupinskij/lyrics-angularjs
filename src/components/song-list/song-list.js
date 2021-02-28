@@ -11,8 +11,6 @@ app.directive('songList', [function() {
       $scope.errorMessage = '';
       $scope.title = '';
 
-      $database.getBandNames().then(console.log);
-
       if($scope.bandName) {
         $scope.title = `${ $scope.bandName } songs`;
         $database.getByBandName($scope.bandName)

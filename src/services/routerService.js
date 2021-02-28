@@ -9,6 +9,10 @@ app.factory('$router', ['$location', function($location) {
         return {
           bandName: pathSegments[2]
         }
+      case 'bands':
+        return {
+          bandName: pathSegments[2]
+        }
     }
   }
 

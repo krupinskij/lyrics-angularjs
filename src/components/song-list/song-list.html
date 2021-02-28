@@ -1,0 +1,35 @@
+<nav class="breadcrumb is-centered" ng-hide="!bandName" aria-label="breadcrubs">
+  <ul>
+    <li><a href="/#!/songs">all</a></li>
+    <li class="is-capitalized is-active"><a href="#">{{ bandName }}</a></li>
+  </ul>
+</nav>
+
+<div class="box">
+  <div class="title has-text-centered is-capitalized">
+    {{ title }}
+  </div>
+  <table class="table is-striped is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>Song title</th>
+        <th>Band name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="song in songs">
+        <td class="is-capitalized has-text-weight-bold">
+          <a href="/#!/song/{{song.band}}/{{song.title}}">{{ song.title }}</a>
+        </td>
+        <td class="is-capitalized">
+          <a href="/#!/songs/{{song.band}}">{{ song.band }}</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="notification is-danger is-fixed-top-right">
+  <button class="delete" ng-click=hideErrorNotif()></button>
+  {{ errorMessage }}
+</div>

@@ -1,0 +1,32 @@
+<nav class="navbar is-white has-shadow is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/assets/logo.svg" style="max-height: 80px" alt="logo" class="py-2 px-2">
+      <span class="is-size-5">Lyrics <br/><span class="has-text-weight-bold">AngularJS</span></span>
+    </a>
+
+    <a role="button" class="navbar-burger p-6" ng-click="toggleDropdown()" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu {{ isActive }}">
+    <div class="navbar-start px-6">
+      <a class="navbar-item px-4" href="/#!/new">
+        <span class="has-text-weight-bold">New song</span>
+      </a>
+      <a class="navbar-item px-4" href="/#!/songs">
+        <span class="has-text-weight-bold">My playlist</span>
+      </a>
+      <a class="navbar-item px-4">
+        <span class="has-text-weight-bold">My bands</span>
+      </a>
+    </div>
+    <div class="navbar-end px-6">
+      <a class="navbar-item px-4">
+        <span class="has-text-weight-bold">Settings</span>
+      </a>
+    </div>
+  </div>
+</nav>

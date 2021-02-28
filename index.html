@@ -6,15 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <title>Lyrics AngularJS</title>
+  <base href="/" />
   
   <script src="angular/angular.js"></script>
   <script src="angular-route/angular-route.js"></script>
+
   <script src="index.js" defer></script>
+  <script src="components/navbar/navbar.js" defer></script>
+  <script src="components/search/search.js" defer></script>
+  <script src="components/song/song.js" defer></script>
+  <script src="components/song-list/song-list.js" defer></script>
+
+  <script src="services/apiService.js" defer></script>
+  <script src="services/databaseService.js" defer></script>
+  <script src="services/routerService.js" defer></script>
   
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="bulma/css/bulma.css">
+
 </head>
 <body>
-  <header ng-include="'components/header/header.html'"></header>
+  <navbar></navbar>
   <ng-view></ng-view>
 </body>
 </html>

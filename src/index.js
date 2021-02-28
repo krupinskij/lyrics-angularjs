@@ -5,7 +5,7 @@ const app = angular.module('app', [
 app.config([
   '$locationProvider', '$routeProvider',
   function($locationProvider, $routeProvider) {
-    //$locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', { templateUrl: '/views/home-page.html' })
       .when('/new', { templateUrl: '/views/new-song-page.html' })

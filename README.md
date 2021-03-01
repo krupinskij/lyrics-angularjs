@@ -18,5 +18,5 @@ $ npm start
 $ npm run watch
 ```
 
-
+## Homepage view
 ![home page view](./screenshot.png)

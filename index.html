@@ -22,23 +22,17 @@
   <script src="services/databaseService.js" defer></script>
   <script src="services/routerService.js" defer></script>
   
-  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="bulma/css/bulma.css">
   <link rel="stylesheet" type="text/css" href="@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
   <navbar></navbar>
   <ng-view></ng-view>
-
-  <footer class="footer">
-    <div class="content has-text-centered is-size-7">
-      <p>Lyrics <span class="has-text-weight-bold">AngularJS</span> by <a href="https://github.com/krupinskij">Jan Krupiński</a>.
-      </p>
-      <p>
-        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-      </p>
-    </div>
-  </footer>
+  <div class="notification is-fixed-down has-text-centered is-size-7 {{ footbarShow }}">
+    <p>Lyrics <span class="has-text-weight-bold">AngularJS</span> by <a href="https://github.com/krupinskij">Jan Krupiński</a>.</p>
+    <p>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+  </div>
 </body>
 </html>

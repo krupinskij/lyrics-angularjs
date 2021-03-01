@@ -5,6 +5,10 @@ app.directive('navbar', [() => {
     controller: ($scope) => {
       $scope.isActive = '';
 
+      $scope.closeDropdown = () => {
+        $scope.isActive = '';
+      }
+
       $scope.toggleDropdown = () => {
         $scope.isActive = !$scope.isActive ? 'is-active' : '';
       }

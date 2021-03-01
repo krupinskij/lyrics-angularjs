@@ -1,7 +1,7 @@
 <nav class="navbar is-white has-shadow is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="/assets/logo.svg"  alt="logo" class="image is-64x64">
+    <a class="navbar-item" ng-click="closeDropdown()" href="/">
+      <img src="/assets/logo.svg" alt="logo" class="image is-64x64">
       <span class="is-size-5">Lyrics <br/><span class="has-text-weight-bold">AngularJS</span></span>
     </a>
 
@@ -13,7 +13,7 @@
   </div>
   <div class="navbar-menu {{ isActive }}">
     <div class="navbar-start px-6">
-      <a class="navbar-item px-4" href="/new">
+      <a class="navbar-item px-4" ng-click="closeDropdown()" href="/new">
         <span class="icon-text">
           <span class="icon">
             <i class="fas fa-search"></i>
@@ -21,28 +21,31 @@
           <span class="has-text-weight-bold">New song</span>
         </span>
       </a>
-      <a class="navbar-item px-4" href="/songs"><span class="icon-text">
-        <span class="icon">
-          <i class="fas fa-music"></i>
+      <a class="navbar-item px-4" ng-click="closeDropdown()" href="/songs">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-music"></i>
+          </span>
+          <span class="has-text-weight-bold">My playlist</span>
         </span>
-        <span class="has-text-weight-bold">My playlist</span>
-      </span>
       </a>
-      <a class="navbar-item px-4" href="/bands"><span class="icon-text">
-        <span class="icon">
-          <i class="fas fa-users"></i>
+      <a class="navbar-item px-4" ng-click="closeDropdown()" href="/bands">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-users"></i>
+          </span>
+          <span class="has-text-weight-bold">My bands</span>
         </span>
-        <span class="has-text-weight-bold">My bands</span>
-      </span>
       </a>
     </div>
     <div class="navbar-end px-6">
-      <a class="navbar-item px-4"><span class="icon-text">
-        <span class="icon">
-          <i class="fas fa-cogs"></i>
+      <a class="navbar-item px-4" ng-click="closeDropdown()">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-cogs"></i>
+          </span>
+          <span class="has-text-weight-bold">Settings</span>
         </span>
-        <span class="has-text-weight-bold">Settings</span>
-      </span>
       </a>
     </div>
   </div>

@@ -1,7 +1,7 @@
 .page {
   max-width: 700px; 
   width: 80%;
-  margin: 80px auto 0
+  margin: 80px auto 100px
 }
 
 .is-fixed-bottom-right {
@@ -14,4 +14,10 @@
   position: fixed !important;
   top: 120px;
   right: 20px;
+}
+
+.is-fixed-down {
+  position: fixed !important;
+  bottom: 0px;
+  width: 100%;
 }

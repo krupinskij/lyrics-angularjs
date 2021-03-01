@@ -18,13 +18,17 @@ app.directive('bandList', [function() {
           },
           errorMessage => {
             $scope.isProgress = false;
-            $scope.errorMessage = errorMessage;
-            $scope.showErrorNotif();
+            $scope.showErrorNotif(errorMessage);
           }
         )
       
-      $scope.showErrorNotif = () => { $scope.isErrorHidden = ''; }
-      $scope.hideErrorNotif = () => { $scope.isErrorHidden = 'is-hidden'; }
+      $scope.showErrorNotif = errorMessage => { 
+        $scope.errorMessage = errorMessage;
+        $scope.isErrorHidden = '';
+      }
+      $scope.hideErrorNotif = () => { 
+        $scope.isErrorHidden = 'is-hidden'; 
+      }
     }
   }
 }])

@@ -25,7 +25,7 @@
   </table>
 </div>
 
-<div class="notification is-danger is-fixed-top-right">
+<div class="notification is-danger is-fixed-top-right {{ isErrorHidden }}">
   <button class="delete" ng-click=hideErrorNotif()></button>
   {{ errorMessage }}
 </div>

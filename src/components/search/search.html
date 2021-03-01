@@ -23,14 +23,9 @@
     </div>
     
     <div class="buttons is-centered">
-      <button class="button is-primary m-4" ng-click="find()" ng-disabled="!songTitle || !bandName">Find song</button>
+      <button class="button is-primary m-4 {{ isLoading }}" ng-click="find()" ng-disabled="!songTitle || !bandName">Find song</button>
     </div>
   </div>
-</div>
-
-<div class="notification is-danger is-fixed-top-right {{ isHidden }}">
-  <button class="delete" ng-click=hideNotif()></button>
-  {{ message }}
 </div>
 
 <div class="notification is-danger is-fixed-top-right {{ isErrorHidden }}">

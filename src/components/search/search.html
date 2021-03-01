@@ -6,7 +6,7 @@
     <div class="field">
       <label for="songTitle" class="label">Song title</label>
       <div class="control has-icons-left">
-        <input class="input is-primary" type="text" ng-model="songTitle" id="songTitle" name="songTitle" placeholder="Song title">
+        <input class="input {{ theme.primaryTheme }}" type="text" ng-model="songTitle" id="songTitle" name="songTitle" placeholder="Song title">
         <span class="icon is-small is-left">
           <i class="fas fa-music"></i>
         </span>
@@ -15,7 +15,7 @@
     <div class="field">
       <label for="bandName" class="label">Band name</label>
       <div class="control has-icons-left">
-        <input class="input is-primary" type="text" ng-model="bandName" id="bandName" name="bandName" placeholder="Band name">
+        <input class="input {{ theme.primaryTheme }}" type="text" ng-model="bandName" id="bandName" name="bandName" placeholder="Band name">
         <span class="icon is-small is-left">
           <i class="fas fa-users"></i>
         </span>
@@ -23,7 +23,7 @@
     </div>
     
     <div class="buttons is-centered">
-      <button class="button is-primary m-4 {{ isLoading }}" ng-click="find()" ng-disabled="!songTitle || !bandName">Find song</button>
+      <button class="button {{ theme.primaryTheme }} m-4 {{ isLoading }}" ng-click="find()" ng-disabled="!songTitle || !bandName">Find song</button>
     </div>
   </div>
 </div>

@@ -12,13 +12,18 @@ app.config([
       .when('/song/:bandName/:songName', { templateUrl: '/views/song-page.html' })
       .when('/songs/:bandName?', { templateUrl: '/views/songs-page.html' })
       .when('/bands/:bandName?', { templateUrl: '/views/bands-page.html' })
+      .when('/settings', { templateUrl: '/views/settings-page.html' })
       .otherwise({ redirectTo: '/' })
   }
 ]);
 
-app.controller('pageController', ['$scope', '$router', function($scope, $router) {
+app.controller('pageController', function($scope, $router, $localStorage) {
   this.$onInit = () => {
-    const pathParams = $router.getPathParams()
-    Object.assign($scope, pathParams);
+    const param = $router.getPathParams()
+    const theme = {
+      primaryTheme: $localStorage.get('primary-theme') || 'is-primary',
+    }
+
+    Object.assign($scope, param, { theme })
   }
-}])
+})

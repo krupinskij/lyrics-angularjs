@@ -1,11 +1,11 @@
-<div class="page has-text-centered">
+<div class="page has-text-centered" ng-controller="pageController">
   <img src="assets/logo.svg" alt="logo" style="max-height: 400px" class="m-4">
 
   <h1 class="is-size-2 m-4">Lyrics <span class="has-text-weight-bold">AngularJS</span></h1>
   <div class="is-size-4">
     Check out your
-    <a class="button is-primary" href="/songs"><span class="has-text-weight-bold">songs</span></a>
+    <a class="button {{ theme.primaryTheme }}" href="/songs"><span class="has-text-weight-bold">songs</span></a>
     or find 
-    <a class="button is-primary" href="/new"><span class="has-text-weight-bold">new one</span></a>
+    <a class="button {{ theme.primaryTheme }}" href="/new"><span class="has-text-weight-bold">new one</span></a>
   </div>
 </div>

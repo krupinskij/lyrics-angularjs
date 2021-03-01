@@ -15,11 +15,13 @@
   <script src="components/band-list/band-list.js" defer></script>
   <script src="components/navbar/navbar.js" defer></script>
   <script src="components/search/search.js" defer></script>
+  <script src="components/settings/settings.js" defer></script>
   <script src="components/song/song.js" defer></script>
   <script src="components/song-list/song-list.js" defer></script>
 
   <script src="services/apiService.js" defer></script>
   <script src="services/databaseService.js" defer></script>
+  <script src="services/localStorageService.js" defer></script>
   <script src="services/routerService.js" defer></script>
   
   <link rel="stylesheet" type="text/css" href="bulma/css/bulma.css">
@@ -30,7 +32,7 @@
 <body>
   <navbar></navbar>
   <ng-view></ng-view>
-  <div class="notification is-fixed-down has-text-centered is-size-7 {{ footbarShow }}">
+  <div class="notification is-fixed-down has-text-centered is-size-7">
     <p>Lyrics <span class="has-text-weight-bold">AngularJS</span> by <a href="https://github.com/krupinskij">Jan Krupiński</a>.</p>
     <p>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
   </div>

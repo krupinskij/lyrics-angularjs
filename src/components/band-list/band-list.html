@@ -5,7 +5,7 @@
   <div class="title has-text-centered is-capitalized">
     {{ title }}
   </div>
-  <progress ng-if="isProgress" class="progress is-primary" max="100"></progress>
+  <progress ng-if="isProgress" class="progress {{ theme.primaryTheme }}" max="100"></progress>
   <div ng-if="!isProgress && !bands.length" class="has-text-centered">
     You don't have any bands yet...
   </div>

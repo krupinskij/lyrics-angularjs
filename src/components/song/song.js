@@ -2,27 +2,28 @@ app.directive('song', [() => {
   return {
     restrict: 'E',
     templateUrl: '/components/song/song.html',
-    controller: ($scope, $http, $location) => {
-      [$scope._, $scope.host, $scope.bandName, $scope.songName] = $location.path().split('/');
-      $scope.isHidden = 'is-hidden';
+    controller: ($scope, $lyricsApi) => {
       $scope.isProgress = true;
+      $scope.isErrorHidden = 'is-hidden';
+      $scope.errorMessage = '';
       
-      $http.get(`https://api.lyrics.ovh/v1/${$scope.bandName}/${$scope.songName}`)
+      $lyricsApi.get($scope.songTitle, $scope.bandName)
         .then(resp => {
           $scope.isProgress = false;
           $scope.lyrics = resp.data.lyrics;
-        }, () => {
+        }, errorMessage => {
           $scope.isProgress = false;
-          $scope.showNotif();
+          $scope.lyrics = errorMessage.data;
+          $scope.showErrorNotif(errorMessage.data);
         });
 
-        $scope.showNotif = () => {
-          $scope.isHidden = '';
-        }
-  
-        $scope.hideNotif = () => {
-          $scope.isHidden = 'is-hidden';
-        }
+      $scope.showErrorNotif = errorMessage => { 
+        $scope.errorMessage = errorMessage;
+        $scope.isErrorHidden = '';
+      }
+      $scope.hideErrorNotif = () => { 
+        $scope.isErrorHidden = 'is-hidden'; 
+      }
     }
   }
 }])

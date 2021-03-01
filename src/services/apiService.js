@@ -4,7 +4,10 @@ app.factory('$lyricsApi', ['$http', function($http) {
   $lyricsApi.get = (songTitle, bandName) => {
     return $http.get(`https://api.lyrics.ovh/v1/${bandName}/${songTitle}`, { 
       timeout: 10000, 
-      transformResponse: () => { return "Song not found"; }
+      transformResponse: resp => { 
+        const data = JSON.parse(resp);
+        return data || "Song not found"; 
+      }
     })
   }
 

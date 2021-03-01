@@ -6,12 +6,14 @@ app.factory('$router', ['$location', function($location) {
 
     switch(pathSegments[1]) {
       case 'songs':
-        return {
-          bandName: pathSegments[2]
-        }
       case 'bands':
         return {
           bandName: pathSegments[2]
+        }
+      case 'song':
+        return {
+          bandName: pathSegments[2],
+          songTitle: pathSegments[3]
         }
     }
   }

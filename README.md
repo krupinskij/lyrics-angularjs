@@ -9,6 +9,11 @@ Add .env file with custom PORT field (default 4000)
 PORT=...
 ```
 
+Run
+```bash
+$ npm install
+```
+
 ## Running the app
 ```bash
 # development
